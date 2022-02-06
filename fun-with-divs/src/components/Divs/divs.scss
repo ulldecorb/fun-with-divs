@@ -33,10 +33,11 @@
         border: 0.25vmin solid red;
         box-shadow: 0 0 1vmin 1vmin red;
         position: absolute;
-        animation: rotateDivRight 3s linear 0s infinite normal none;
+        // animation: rotateDivRight 3s linear 0s infinite normal none;
         
         &:nth-child(1) {
-            animation: rotateDivLeft 3s linear 0s infinite normal none;
+            // animation: rotateDivLeft 3s linear 0s infinite normal none;
+            opacity: 1;
         }
     }
     

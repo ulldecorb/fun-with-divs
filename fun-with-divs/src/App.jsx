@@ -1,6 +1,7 @@
 import React from 'react';
 import { Divs } from './components/Divs';
 import { Counter } from './components/Counter';
+import { Menu } from './components/Menu';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Divs />
       <Counter />
+      <Menu />
     </div>
   );
 }

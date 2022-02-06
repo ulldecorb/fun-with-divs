@@ -70,13 +70,10 @@
   -webkit-box-shadow: 0 0 1vmin 1vmin red;
           box-shadow: 0 0 1vmin 1vmin red;
   position: absolute;
-  -webkit-animation: rotateDivRight 3s linear 0s infinite normal none;
-          animation: rotateDivRight 3s linear 0s infinite normal none;
 }
 
 .rotation-div__square:nth-child(1) {
-  -webkit-animation: rotateDivLeft 3s linear 0s infinite normal none;
-          animation: rotateDivLeft 3s linear 0s infinite normal none;
+  opacity: 1;
 }
 
 .rotation-div__vanishing-point {
