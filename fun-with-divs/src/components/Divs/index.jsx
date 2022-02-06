@@ -6,6 +6,7 @@ export const Divs = function Divs() {
     <section className="rotation-div__box">
       <figure className="rotation-div__square" />
       <figure className="rotation-div__square" />
+      <figure className="rotation-div__vanishing-point" />
     </section>
   );
 };

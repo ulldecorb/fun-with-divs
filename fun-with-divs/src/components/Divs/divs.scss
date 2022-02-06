@@ -5,15 +5,49 @@
     align-items: $align;
 }
 
+@keyframes rotateDivRight {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes rotateDivLeft {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
+
 .rotation-div {
 
     &__box {
         height: 100vh;
         width: 100vw;
-        top: 0;
-        left: 0;
-        position: absolute;
         @include flex(column, center, center);
         background-color: #000;
+        overflow: hidden;
+        color:red;
+    }
+
+    &__square {
+        // margin: 0 auto;
+        height: 90%;
+        width: 90%;
+        border: 0.25vmin solid red;
+        box-shadow: 0 0 1vmin 1vmin red;
+        position: absolute;
+        animation: rotateDivRight 2s linear 0s infinite normal none;
+        
+        &:nth-child(1) {
+            animation: rotateDivLeft 2s linear 0s infinite normal none;
+        }
+    }
+    
+    &__vanishing-point {
+        height: 6vh;
+        width: 6vw;
+        border-radius: 50%;
+        background-color: red;
+        box-shadow: 0 0 10vmin 10vmin red;
+        // position: absolute;
     }
 }
+
+
