@@ -24,12 +24,28 @@ export const Divs = function Divs({ handleChance }) {
   //   window.addEventListener('onKeyPress', () => getResult);
   // }, []);
 
+  // const checkHit = (degree) => {
+  //   let isHit = false;
+  //   if ()
+  // };
+
+  function convertToAngle(matrix) {
+    let values = matrix.split('(')[1];
+    [values] = [values.split(')')[0]];
+    values = values.split(',');
+
+    const sin = values[1]; // 0.5
+
+    return Math.round(Math.asin(sin) * (180 / Math.PI));
+  }
+
   const handleHitChance = () => {
     const divRight = getComputedStyle(document.getElementById('divRight')).transform;
-    handleChance(divRight.rotate);
-    console.log(divRight);
-    // eslint-disable-next-line no-debugger
-    // debugger;
+    const currentDegree = convertToAngle(divRight);
+    // return currentDegree;
+    handleChance(currentDegree);
+    // handleChance(divRight.rotate);
+    // console.log(convertToAngle(divRight));
   };
 
   return (

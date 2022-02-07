@@ -78,8 +78,8 @@
   -webkit-box-shadow: 0 0 1vmin 1vmin red;
           box-shadow: 0 0 1vmin 1vmin red;
   position: absolute;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .rotation-div__square:nth-child(1) {
