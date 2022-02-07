@@ -1,2 +1,2 @@
 # fun-with-divs
-Retro style game where wins became on mach squares at the right moment.
+Retro game where victory is achieved by hitting two squares at the same time.
