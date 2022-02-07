@@ -14,7 +14,6 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  border: 2px solid yellow;
 }
 
 .score__hits, .score__fails {

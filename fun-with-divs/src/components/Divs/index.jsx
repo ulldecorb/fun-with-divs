@@ -3,13 +3,13 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import './divs.css';
 
-export const Divs = function Divs({ handleChance }) {
+export const Divs = function Divs({ handleCheckFire }) {
   // const divRight = useRef();
   // const [rotateDivDegree, setRotateDivDegree] = useState('rotate(0deg)');
 
   // const rotationHandler = () => {
   //   const rightRotationDegrees = divRight.style.transform;
-  //   handleChance(rightRotationDegrees);
+  //   handleCheckFire(rightRotationDegrees);
   // };
 
   // const getResult = (event) => {
@@ -42,17 +42,17 @@ export const Divs = function Divs({ handleChance }) {
     return Math.round(Math.asin(sin) * (180 / Math.PI));
   };
 
-  const handleHitChance = () => {
+  const handleFire = () => {
     const divRight = getComputedStyle(document.getElementById('divRight')).transform;
     const currentAngle = convertToAngle(divRight);
-    handleChance(checkHit(currentAngle));
+    handleCheckFire(checkHit(currentAngle));
   };
 
   return (
     <section
       className="rotation-div__box"
       role="presentation"
-      onKeyPress={(e) => handleHitChance(e)}
+      onKeyPress={(e) => handleFire(e)}
     >
       <figure id="divRight" className="rotation-div__square" />
       <figure id="divLeft" className="rotation-div__square" />
@@ -60,7 +60,7 @@ export const Divs = function Divs({ handleChance }) {
       <button
         type="button"
         className="rotation-div__hit-button"
-        onClick={handleHitChance}
+        onClick={handleFire}
       >
         HIT
       </button>
@@ -69,7 +69,7 @@ export const Divs = function Divs({ handleChance }) {
 };
 
 Divs.propTypes = {
-  handleChance: PropTypes.func.isRequired
+  handleCheckFire: PropTypes.func.isRequired
 };
 
 export default Divs;
