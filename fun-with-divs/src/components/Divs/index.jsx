@@ -1,9 +1,9 @@
 // import React, { useEffect, useRef, useState } from 'react';
 import React from 'react';
-// import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 import './divs.css';
 
-export const Divs = function Divs() {
+export const Divs = function Divs({ handleChance }) {
   // const divRight = useRef();
   // const [rotateDivDegree, setRotateDivDegree] = useState('rotate(0deg)');
 
@@ -24,29 +24,27 @@ export const Divs = function Divs() {
   //   window.addEventListener('onKeyPress', () => getResult);
   // }, []);
 
-  // const [key, setKey] = useState('no key');
-
-  // console.log(key);
-
-  const consoleKey = () => {
-    // setKey(e.key);
-    console.log('hola');
+  const handleHitChance = () => {
+    const divRight = getComputedStyle(document.getElementById('divRight')).transform;
+    handleChance(divRight);
+    console.log(divRight);
+    // eslint-disable-next-line no-debugger
+    // debugger;
   };
 
   return (
     <section
       className="rotation-div__box"
       role="presentation"
-      onKeyPress={(e) => consoleKey(e)}
+      onKeyPress={(e) => handleHitChance(e)}
     >
-      {/* <h2>{key}</h2> */}
       <figure id="divRight" className="rotation-div__square" />
       <figure id="divLeft" className="rotation-div__square" />
       <figure className="rotation-div__vanishing-point" />
       <button
         type="button"
         className="rotation-div__hit-button"
-        onClick={consoleKey}
+        onClick={handleHitChance}
       >
         HIT
       </button>
@@ -54,8 +52,8 @@ export const Divs = function Divs() {
   );
 };
 
-// Divs.propTypes = {
-//   handleChance: PropTypes.func.isRequired
-// };
+Divs.propTypes = {
+  handleChance: PropTypes.func.isRequired
+};
 
 export default Divs;
