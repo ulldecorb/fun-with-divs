@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 // import React from 'react';
 import { Divs } from './components/Divs';
 import { Score } from './components/Score';
-// import { Menu } from './components/Menu';
+import { Menu } from './components/Menu';
 import './App.css';
 
 function App() {
   const [hitScore, setHitScore] = useState('🍻');
   const [failScore, setFailScore] = useState('💩');
 
-  const handleChance = (isHit) => {
+  const handleCheckFire = (isHit) => {
     if (isHit) {
       setHitScore(`${hitScore}🍻`);
     } else {
@@ -19,9 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <Divs handleChance={handleChance} />
+      <Divs handleCheckFire={handleCheckFire} />
       <Score hitScore={hitScore} failScore={failScore} />
-      {/* <Menu /> */}
+      <Menu />
     </div>
   );
 }
