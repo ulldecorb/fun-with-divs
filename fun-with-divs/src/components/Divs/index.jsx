@@ -24,12 +24,15 @@ export const Divs = function Divs({ handleChance }) {
   //   window.addEventListener('onKeyPress', () => getResult);
   // }, []);
 
-  // const checkHit = (degree) => {
-  //   let isHit = false;
-  //   if ()
-  // };
+  const checkHit = (angle) => {
+    let isHit = false;
+    if (angle === 0 || angle === 90 || angle === -90) {
+      isHit = true;
+    }
+    return isHit;
+  };
 
-  function convertToAngle(matrix) {
+  const convertToAngle = (matrix) => {
     let values = matrix.split('(')[1];
     [values] = [values.split(')')[0]];
     values = values.split(',');
@@ -37,15 +40,12 @@ export const Divs = function Divs({ handleChance }) {
     const sin = values[1]; // 0.5
 
     return Math.round(Math.asin(sin) * (180 / Math.PI));
-  }
+  };
 
   const handleHitChance = () => {
     const divRight = getComputedStyle(document.getElementById('divRight')).transform;
-    const currentDegree = convertToAngle(divRight);
-    // return currentDegree;
-    handleChance(currentDegree);
-    // handleChance(divRight.rotate);
-    // console.log(convertToAngle(divRight));
+    const currentAngle = convertToAngle(divRight);
+    handleChance(checkHit(currentAngle));
   };
 
   return (

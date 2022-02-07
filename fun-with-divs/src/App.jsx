@@ -9,13 +9,7 @@ function App() {
   const [hitScore, setHitScore] = useState('🍻');
   const [failScore, setFailScore] = useState('💩');
 
-  const handleChance = (degrees) => {
-    let isHit = false;
-    if (degrees === 'matrix(1, 0, 0, 1, 0, 0)' || degrees === 'matrix(6.12323e-17, 1, -1, 6.12323e-17, 0, 0)'
-  || degrees === 'matrix(-1, 1.22465e-16, -1.22465e-16, -1, 0, 0)' || degrees === 'matrix(-1.83697e-16, -1, 1, -1.83697e-16, 0, 0)') {
-      isHit = true;
-    }
-    // console.log(`isHit : ${isHit}`);
+  const handleChance = (isHit) => {
     if (isHit) {
       setHitScore(`${hitScore}🍻`);
     } else {
