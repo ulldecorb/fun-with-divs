@@ -1,6 +1,6 @@
 .score {
   position: fixed;
-  top: 5vh;
+  top: 2vh;
   left: 20vw;
   z-index: 2;
   height: 60vh;
@@ -20,8 +20,7 @@
 .score__hits, .score__fails {
   height: 80vh;
   width: 30vw;
-  margin: 4vh 2vh;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .score__hits {

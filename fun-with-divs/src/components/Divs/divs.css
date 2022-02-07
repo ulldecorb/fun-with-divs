@@ -4,8 +4,8 @@
             transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
+    -webkit-transform: rotate(359.999deg);
+            transform: rotate(359.999deg);
   }
 }
 
@@ -15,8 +15,8 @@
             transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
+    -webkit-transform: rotate(359.999deg);
+            transform: rotate(359.999deg);
   }
 }
 
@@ -26,8 +26,8 @@
             transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(-359deg);
-            transform: rotate(-359deg);
+    -webkit-transform: rotate(-359.999deg);
+            transform: rotate(-359.999deg);
   }
 }
 
@@ -37,8 +37,8 @@
             transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(-359deg);
-            transform: rotate(-359deg);
+    -webkit-transform: rotate(-359.999deg);
+            transform: rotate(-359.999deg);
   }
 }
 
@@ -63,21 +63,40 @@
   color: red;
 }
 
+.rotation-div__box--pink-skin {
+  background-color: pink;
+}
+
+.rotation-div__box--orange-skin {
+  background-color: orange;
+}
+
 .rotation-div__square {
-  height: 20%;
-  width: 20%;
+  height: 90%;
+  width: 90%;
   border: 0.25vmin solid red;
   -webkit-box-shadow: 0 0 1vmin 1vmin red;
           box-shadow: 0 0 1vmin 1vmin red;
   position: absolute;
-  -webkit-animation: rotateDivRight 3s linear 0s infinite normal none;
-          animation: rotateDivRight 3s linear 0s infinite normal none;
+  -webkit-animation: rotateDivRight 10s linear 0s infinite normal none;
+          animation: rotateDivRight 10s linear 0s infinite normal none;
 }
 
 .rotation-div__square:nth-child(1) {
-  -webkit-animation: rotateDivLeft 3s linear 0s infinite normal none;
-          animation: rotateDivLeft 3s linear 0s infinite normal none;
-  opacity: 1;
+  -webkit-animation: rotateDivLeft 10s linear 0s infinite normal none;
+          animation: rotateDivLeft 10s linear 0s infinite normal none;
+}
+
+.rotation-div__square--pink-skin {
+  border: 0.25vmin solid pink;
+  -webkit-box-shadow: 0 0 1vmin 1vmin pink;
+          box-shadow: 0 0 1vmin 1vmin pink;
+}
+
+.rotation-div__square--orange-skin {
+  border: 0.25vmin solid black;
+  -webkit-box-shadow: 0 0 1vmin 1vmin black;
+          box-shadow: 0 0 1vmin 1vmin black;
 }
 
 .rotation-div__vanishing-point {
