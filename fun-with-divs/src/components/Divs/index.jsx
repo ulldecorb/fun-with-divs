@@ -26,7 +26,7 @@ export const Divs = function Divs({ handleChance }) {
 
   const handleHitChance = () => {
     const divRight = getComputedStyle(document.getElementById('divRight')).transform;
-    handleChance(divRight);
+    handleChance(divRight.rotate);
     console.log(divRight);
     // eslint-disable-next-line no-debugger
     // debugger;
