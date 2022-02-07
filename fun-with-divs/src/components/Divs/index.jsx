@@ -1,31 +1,38 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { PropTypes } from 'prop-types';
 import './divs.css';
 
-export const Divs = function Divs() {
-  // const replicateDiv = () => {
-  //   const divRight = document.getElementById('divRight');
-  //   console.log(`divRight: id = ${divRight.id}`);
-  //   for (let i = 0; i < 10; i + 1) {
-  //     const divChild = divRight.cloneNode();
-  //     console.log(44);
-  //     divChild.id = `divRight${i}`;
-  //     if (divChild.id === 'divRight0') {
-  //       divRight.appendChild(divChild);
-  //     } else {
-  //       document.getElementById(`divRight${i - 1}`).appendChild(divChild);
-  //     }
-  //   }
-  // };
+export const Divs = function Divs({ handleChance }) {
+  const divRight = useRef();
 
-  // replicateDiv();
+  const rotationHandler = () => {
+    const rightRotationDegrees = divRight.current.transition.rotate;
+    handleChance(rightRotationDegrees);
+  };
+
+  const getResult = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      rotationHandler();
+    }
+  };
+
+  // document.addEventListener(onKeyPress = ' ', getResult());
 
   return (
-    <section className="rotation-div__box">
-      <figure id="divRight" className="rotation-div__square" />
+    <section
+      className="rotation-div__box"
+      role="presentation"
+      onKeyPress={getResult}
+    >
+      <figure ref={divRight} id="divRight" className="rotation-div__square" />
       <figure id="divLeft" className="rotation-div__square" />
       <figure className="rotation-div__vanishing-point" />
     </section>
   );
+};
+
+Divs.propTypes = {
+  handleChance: PropTypes.func.isRequired
 };
 
 export default Divs;
