@@ -45,4 +45,17 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.input {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 20vh;
+  width: 20vw;
+  z-index: 10;
+}
+
+.input__background-color {
+  top: 20vh;
+}
 /*# sourceMappingURL=menu.css.map */

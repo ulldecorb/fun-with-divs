@@ -35,3 +35,16 @@
         align-items: center;
     }
 }
+
+.input {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 20vh;
+    width: 20vw; 
+    z-index: 10;
+
+    &__background-color {
+        top: 20vh;
+    }
+}
