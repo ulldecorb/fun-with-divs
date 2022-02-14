@@ -10,7 +10,7 @@ function App() {
   const [hitScore, setHitScore] = useState('🍻');
   const [failScore, setFailScore] = useState('💩');
   const [divColor, setDivColor] = useState('red');
-  const [backgroundColor, setBackgroundColor] = useState('#000');
+  const [backgroundColor, setBackgroundColor] = useState('#000000');
 
   const handleCheckFire = (isHit) => {
     if (isHit) {
