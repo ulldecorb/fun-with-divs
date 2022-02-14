@@ -46,16 +46,14 @@
           align-items: center;
 }
 
-.input {
-  position: fixed;
-  top: 0;
-  left: 0;
+.menu__box .input {
   height: 20vh;
   width: 20vw;
-  z-index: 10;
 }
 
-.input__background-color {
-  top: 20vh;
+.menu__reset-color-button {
+  border-radius: 5vmin;
+  height: 10vmin;
+  width: 20vmin;
 }
 /*# sourceMappingURL=menu.css.map */
