@@ -12,7 +12,10 @@ export const Menu = function Menu({ setColor }) {
 
   const handleDivColors = (color) => {
     setDivColor(color);
+
     setColor(divColor, backgroundColor);
+    const menuBox = document.getElementById('menuBox');
+    menuBox.style.border = `2vmin solid ${divColor}`;
   };
 
   const handleBackgroundColor = (color) => {
@@ -20,12 +23,9 @@ export const Menu = function Menu({ setColor }) {
     setColor(divColor, backgroundColor);
   };
 
-  console.log('divColor', divColor);
-  console.log('backgroundColor', backgroundColor);
-
   return (
     <section className="menu">
-      <div className="menu__box">
+      <div id="menuBox" className="menu__box">
         <input className="input input__div-color" type="color" value={divColor} onChange={(e) => handleDivColors(e.target.value)} />
         <input className="input input__background-color" type="color" value={backgroundColor} onChange={(e) => handleBackgroundColor(e.target.value)} />
 
