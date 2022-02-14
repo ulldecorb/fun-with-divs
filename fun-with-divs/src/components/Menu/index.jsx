@@ -3,12 +3,8 @@ import { PropTypes } from 'prop-types';
 import './menu.css';
 
 export const Menu = function Menu({ setColor }) {
-  // const handleColor = (event) => {
-  //   event.preventDefault();
-  // };
-
-  const [divColor, setDivColor] = useState('pink');
-  const [backgroundColor, setBackgroundColor] = useState('#000');
+  const [divColor, setDivColor] = useState('red');
+  const [backgroundColor, setBackgroundColor] = useState('#00000');
 
   const handleDivColors = (color) => {
     setDivColor(color);
@@ -23,10 +19,17 @@ export const Menu = function Menu({ setColor }) {
     setColor(divColor, backgroundColor);
   };
 
+  const resetColor = () => {
+    setDivColor('red');
+    setBackgroundColor('#00000');
+  };
+
   return (
     <section className="menu">
       <div id="menuBox" className="menu__box">
+        Div Color:
         <input className="input input__div-color" type="color" value={divColor} onChange={(e) => handleDivColors(e.target.value)} />
+        Background Color:
         <input className="input input__background-color" type="color" value={backgroundColor} onChange={(e) => handleBackgroundColor(e.target.value)} />
 
         {/* <input type="range" name="rotation-speed" id="rotation-speed" max="10" min="2" />
@@ -40,7 +43,13 @@ export const Menu = function Menu({ setColor }) {
           <input type="submit" value="Submit" />
         </form>
         {/* <input type="color" name="divs-color" id="divs-color" /> */}
-        {/* <button type="button">RESET</button> */}
+        <button
+          type="button"
+          onClick={resetColor}
+          className="menu__reset-color-button"
+        >
+          RESET COLOR
+        </button>
       </div>
     </section>
   );
