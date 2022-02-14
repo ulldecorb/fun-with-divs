@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import './menu.css';
 
-export const Menu = function Menu({ setColors }) {
+export const Menu = function Menu({ setColor }) {
   // const handleColor = (event) => {
   //   event.preventDefault();
   // };
 
-  const [divColor, setDivColor] = useState('red');
+  const [divColor, setDivColor] = useState('pink');
   const [backgroundColor, setBackgroundColor] = useState('#000');
 
   const handleDivColors = (color) => {
     setDivColor(color);
-    setColors(divColor, backgroundColor);
+    setColor(divColor, backgroundColor);
   };
 
   const handleBackgroundColor = (color) => {
     setBackgroundColor(color);
-    setColors(divColor, backgroundColor);
+    setColor(divColor, backgroundColor);
   };
 
   console.log('divColor', divColor);
@@ -47,7 +47,7 @@ export const Menu = function Menu({ setColors }) {
 };
 
 Menu.propTypes = {
-  setColors: PropTypes.func.isRequired
+  setColor: PropTypes.func.isRequired
 };
 
 export default Menu;

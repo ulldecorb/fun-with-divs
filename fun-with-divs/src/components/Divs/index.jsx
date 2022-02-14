@@ -1,24 +1,29 @@
 // import React, { useEffect, useRef, useState } from 'react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import './divs.css';
 
-export const Divs = function Divs({ handleCheckFire }) {
-  // const divRight = useRef();
-  // const [rotateDivDegree, setRotateDivDegree] = useState('rotate(0deg)');
+export const Divs = function Divs({ handleCheckFire, divColor, backgroundColor }) {
+  const setSelectedColors = () => {
+    const divRight = document.getElementById('divRight');
+    const divLeft = document.getElementById('divLeft');
+    const background = document.getElementById('divs-background');
+    const vanishingPoint = document.getElementById('vanishingPoint');
+    const hitButton = document.getElementById('hitButton');
+    divRight.style.border = `0.25vmin solid ${divColor}`;
+    divRight.style.boxShadow = `0 0 1vmin 1vmin ${divColor}`;
+    divLeft.style.border = `0.25vmin solid ${divColor}`;
+    divLeft.style.boxShadow = `0 0 1vmin 1vmin ${divColor}`;
+    background.style.backgroundColor = backgroundColor;
+    vanishingPoint.style.backgroundColor = divColor;
+    vanishingPoint.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
+    hitButton.style.color = divColor;
+    hitButton.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
+  };
 
-  // const rotationHandler = () => {
-  //   const rightRotationDegrees = divRight.style.transform;
-  //   handleCheckFire(rightRotationDegrees);
-  // };
-
-  // const getResult = (event) => {
-  //   console.log(event.key);
-  //   console.log(`event.key : ${event.key}`);
-  //   if (event.key === 'Enter' || event.key === ' ') {
-  //     rotationHandler();
-  //   }
-  // };
+  useEffect(() => {
+    setSelectedColors();
+  });
 
   // useEffect(() => {
   //   window.addEventListener('onKeyPress', () => getResult);
@@ -36,9 +41,7 @@ export const Divs = function Divs({ handleCheckFire }) {
     let values = matrix.split('(')[1];
     [values] = [values.split(')')[0]];
     values = values.split(',');
-
     const sin = values[1]; // 0.5
-
     return Math.round(Math.asin(sin) * (180 / Math.PI));
   };
 
@@ -53,12 +56,14 @@ export const Divs = function Divs({ handleCheckFire }) {
       className="rotation-div__box"
       role="presentation"
       onKeyPress={(e) => handleFire(e)}
+      id="divs-background"
     >
       <figure id="divRight" className="rotation-div__square" />
       <figure id="divLeft" className="rotation-div__square" />
-      <figure className="rotation-div__vanishing-point" />
+      <figure id="vanishingPoint" className="rotation-div__vanishing-point" />
       <button
         type="button"
+        id="hitButton"
         className="rotation-div__hit-button"
         onClick={handleFire}
       >
@@ -69,7 +74,9 @@ export const Divs = function Divs({ handleCheckFire }) {
 };
 
 Divs.propTypes = {
-  handleCheckFire: PropTypes.func.isRequired
+  handleCheckFire: PropTypes.func.isRequired,
+  divColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired
 };
 
 export default Divs;
