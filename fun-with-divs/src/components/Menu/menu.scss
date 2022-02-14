@@ -14,34 +14,38 @@
 
 .menu {
     position: fixed;
-    // z-index: 3;
+    z-index: 3;
     height: 100vh;
     width: 100vw;
     top: 0;
     left: 0;
-    // background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
 
     &__box {
-        height: 70vh;
-        width: 70vw;
+        height: 80vh;
+        width: 80vw;
         border-radius: 10vmin;
         border: 2vmin solid red;
+        background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         
         .input {
-            height: 20vh;
-            width: 20vw; 
-            // z-index: 10;
-        
-            // &__background-color {
-            //     top: 20vh;
-            // }
+
+            &__color{
+                height: 10vmin;
+                width: 20vmin;
+                border: none;
+            }
+
+            &__speed {
+                opacity: 1;
+            }
         }
     }
 
@@ -49,5 +53,11 @@
         border-radius: 5vmin;
         height: 10vmin;
         width: 20vmin;
+        margin-top: 1vmin;
+        background-color: rgb(180, 180, 180);
+
+        &:hover {
+            background-color: rgb(207, 206, 206);
+        }
     }
 }

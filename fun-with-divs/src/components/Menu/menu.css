@@ -11,10 +11,12 @@
 
 .menu {
   position: fixed;
+  z-index: 3;
   height: 100vh;
   width: 100vw;
   top: 0;
   left: 0;
+  background: rgba(0, 0, 0, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,10 +29,11 @@
 }
 
 .menu__box {
-  height: 70vh;
-  width: 70vw;
+  height: 80vh;
+  width: 80vw;
   border-radius: 10vmin;
   border: 2vmin solid red;
+  background-color: rgba(0, 0, 0, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,14 +49,25 @@
           align-items: center;
 }
 
-.menu__box .input {
-  height: 20vh;
-  width: 20vw;
+.menu__box .input__color {
+  height: 10vmin;
+  width: 20vmin;
+  border: none;
+}
+
+.menu__box .input__speed {
+  opacity: 1;
 }
 
 .menu__reset-color-button {
   border-radius: 5vmin;
   height: 10vmin;
   width: 20vmin;
+  margin-top: 1vmin;
+  background-color: #b4b4b4;
+}
+
+.menu__reset-color-button:hover {
+  background-color: #cfcece;
 }
 /*# sourceMappingURL=menu.css.map */

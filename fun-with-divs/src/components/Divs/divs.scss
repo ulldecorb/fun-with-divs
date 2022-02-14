@@ -5,11 +5,6 @@
     align-items: $align;
 }
 
-// @keyframes rotateDivRight {
-//     0% {transform: matrix(1, 0, 0, 1, 0, 0);}
-//     100% {transform: matrix(1, -1.74533e-06, 1.74533e-06, 1, 0, 0);}
-// }
-
 @keyframes rotateDivRight {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(359.999deg);}

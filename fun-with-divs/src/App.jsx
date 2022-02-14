@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import React from 'react';
-// import React from 'react';
 import { Divs } from './components/Divs';
 import { Score } from './components/Score';
 import { Menu } from './components/Menu';
@@ -11,6 +9,8 @@ function App() {
   const [failScore, setFailScore] = useState('💩');
   const [divColor, setDivColor] = useState('red');
   const [backgroundColor, setBackgroundColor] = useState('#000000');
+  const [rotationSpeedDivRight, setRotationSpeedDivRight] = useState('rotateDivRight 10s linear 0s infinite normal none;');
+  const [rotationSpeedDivLeft, setRotationSpeedDivLeft] = useState('rotateDivLeft 10s linear 0s infinite normal none;');
 
   const handleCheckFire = (isHit) => {
     if (isHit) {
@@ -25,13 +25,20 @@ function App() {
     setBackgroundColor(backgroundColorProp);
   };
 
+  const setRotation = (speed) => {
+    setRotationSpeedDivRight(`rotateDivRight ${speed}s linear 0s infinite normal none`);
+    setRotationSpeedDivLeft(`rotateDivLeft ${speed}s linear 0s infinite normal none`);
+  };
+
   return (
     <div className="App">
-      <Menu setColor={setColor} />
+      <Menu setColor={setColor} setRotation={setRotation} />
       <Divs
         handleCheckFire={handleCheckFire}
         divColor={divColor}
         backgroundColor={backgroundColor}
+        rotationSpeedDivRight={rotationSpeedDivRight}
+        rotationSpeedDivLeft={rotationSpeedDivLeft}
       />
       <Score hitScore={hitScore} failScore={failScore} />
     </div>

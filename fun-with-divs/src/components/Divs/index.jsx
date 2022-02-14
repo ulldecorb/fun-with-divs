@@ -3,7 +3,9 @@ import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import './divs.css';
 
-export const Divs = function Divs({ handleCheckFire, divColor, backgroundColor }) {
+export const Divs = function Divs({
+  handleCheckFire, divColor, backgroundColor, rotationSpeedDivRight, rotationSpeedDivLeft
+}) {
   const setSelectedColors = () => {
     const divRight = document.getElementById('divRight');
     const divLeft = document.getElementById('divLeft');
@@ -21,8 +23,18 @@ export const Divs = function Divs({ handleCheckFire, divColor, backgroundColor }
     hitButton.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
   };
 
+  const setRotation = () => {
+    const divRight = document.getElementById('divRight');
+    const divLeft = document.getElementById('divLeft');
+    divRight.style.animation = rotationSpeedDivRight;
+    divLeft.style.animation = rotationSpeedDivLeft;
+  };
+
   useEffect(() => {
     setSelectedColors();
+  });
+  useEffect(() => {
+    setRotation();
   });
 
   // useEffect(() => {
@@ -76,7 +88,9 @@ export const Divs = function Divs({ handleCheckFire, divColor, backgroundColor }
 Divs.propTypes = {
   handleCheckFire: PropTypes.func.isRequired,
   divColor: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired
+  backgroundColor: PropTypes.string.isRequired,
+  rotationSpeedDivRight: PropTypes.string.isRequired,
+  rotationSpeedDivLeft: PropTypes.string.isRequired
 };
 
 export default Divs;
