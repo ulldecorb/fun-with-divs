@@ -1,7 +1,7 @@
 :root {
-  --style-color: red;
+  --style-color: #FF0000;
   --style-background-color: #000;
-  --red-style-color: red;
+  --red-style-color: #FF0000;
   --red-style-background-color: #000;
   --noir-style-color: #000;
   --noir-style-background-color: #FFF;
@@ -16,7 +16,7 @@
   width: 100vw;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background-color: #FF0000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,7 +32,7 @@
   height: 80vh;
   width: 80vw;
   border-radius: 10vmin;
-  border: 2vmin solid red;
+  border: 2vmin solid #FF0000;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   display: -webkit-box;
@@ -48,6 +48,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 2vmax;
 }
 
 .menu__box .input__color {
@@ -58,14 +59,45 @@
 
 .menu__box .input__speed {
   opacity: 1;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 1vh;
+  background-color: #000;
+  border-radius: 0.5vh;
+}
+
+.menu__box .input__speed::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  height: 2vh;
+  width: 2vh;
+  background: #FF0000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menu__speed-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
 }
 
 .menu__reset-color-button {
+  font-size: 2vmax;
   border-radius: 5vmin;
   height: 10vmin;
   width: 20vmin;
-  margin-top: 1vmin;
+  margin-top: 2vh;
   background-color: #b4b4b4;
+  cursor: pointer;
 }
 
 .menu__reset-color-button:hover {
@@ -73,14 +105,15 @@
 }
 
 .menu__div-link {
+  text-decoration: none;
   position: absolute;
   height: 6vmin;
   width: 6vmin;
-  font-size: 0.6rem;
+  font-size: 3vmin;
   top: 7vh;
   right: 9vw;
-  color: red;
-  border: 2vmin solid red;
+  color: #FF0000;
+  border: 2vmin solid #FF0000;
   outline: 0.5 solid rgba(0, 0, 0, 0.3);
   border-radius: 5vh;
   background-color: #000;
@@ -96,5 +129,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.menu__div-link:hover {
+  background-color: #b4b4b4;
 }
 /*# sourceMappingURL=menu.css.map */

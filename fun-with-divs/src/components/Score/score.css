@@ -19,7 +19,7 @@
 .score__hits, .score__fails {
   height: 80vh;
   width: 30vw;
-  font-size: 2rem;
+  font-size: 8vmin;
 }
 
 .score__hits {

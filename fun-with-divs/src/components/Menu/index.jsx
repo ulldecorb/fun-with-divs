@@ -6,7 +6,7 @@ import './menu.css';
 export const Menu = function Menu({ setColor, setRotation }) {
   const [rotationSpeedDivRight, setRotationSpeedDivRight] = useState('10');
   const [rotationSpeedDivLeft, setRotationSpeedDivLeft] = useState('10');
-  const [divColor, setDivColor] = useState('red');
+  const [divColor, setDivColor] = useState('#FF0000');
   const [backgroundColor, setBackgroundColor] = useState('#00000');
 
   const handleRotationSpeed = (speed) => {
@@ -21,40 +21,51 @@ export const Menu = function Menu({ setColor, setRotation }) {
     const menuBox = document.getElementById('menuBox');
     menuBox.style.border = `2vmin solid ${divColor}`;
     menuBox.style.color = divColor;
+    const divLink = document.getElementById('divLink');
+    divLink.style.color = divColor;
+    divLink.style.border = `2vmin solid ${divColor}`;
   };
 
   const handleBackgroundColor = (color) => {
     setBackgroundColor(color);
     setColor(divColor, backgroundColor);
+    const menu = document.getElementById('menu');
+    menu.style.backgroundColor = backgroundColor;
   };
 
-  const resetColor = () => {
+  const reset = () => {
     setColor('red', '#00000');
+    setRotation(10, 10);
   };
 
   return (
-    <section className="menu">
+    <section id="menu" className="menu">
       <div id="menuBox" className="menu__box">
-        <Link id="divLink" className="menu__div-link" to="../">OUT</Link>
-
+        <Link id="divLink" className="menu__div-link" to="../">X</Link>
         Rotation Speed:
-        <input
-          type="range"
-          value={rotationSpeedDivRight}
-          onChange={(e) => handleRotationSpeed(e.target.value)}
-          max="10"
-          min="1"
-        />
+        <div className="menu__speed-box">
+          MAX
+          <input
+            type="range"
+            value={rotationSpeedDivRight}
+            onChange={(e) => handleRotationSpeed(e.target.value)}
+            max="10"
+            min="1"
+            className="input__speed"
+            id="speed"
+          />
+          MIN
+        </div>
         Div Color:
         <input className="input__color" type="color" value={divColor} onChange={(e) => handleDivColors(e.target.value)} />
         Background Color:
         <input className="input__color" type="color" value={backgroundColor} onChange={(e) => handleBackgroundColor(e.target.value)} />
         <button
           type="button"
-          onClick={resetColor}
+          onClick={reset}
           className="menu__reset-color-button"
         >
-          RESET COLOR
+          RESET
         </button>
       </div>
     </section>
