@@ -1,10 +1,14 @@
 // import React, { useEffect, useRef, useState } from 'react';
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import { Score } from '../Score';
 import './divs.css';
 
 export const Divs = function Divs({
-  handleCheckFire, divColor, backgroundColor, rotationSpeedDivRight, rotationSpeedDivLeft
+  handleCheckFire, divColor, backgroundColor, rotationSpeedDivRight, rotationSpeedDivLeft,
+  hitScore,
+  failScore
 }) {
   const setSelectedColors = () => {
     const divRight = document.getElementById('divRight');
@@ -81,6 +85,12 @@ export const Divs = function Divs({
       >
         HIT
       </button>
+      <Link id="link-menu" to="../menu">MENU</Link>
+
+      <Score
+        hitScore={hitScore}
+        failScore={failScore}
+      />
     </section>
   );
 };
@@ -90,7 +100,9 @@ Divs.propTypes = {
   divColor: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
   rotationSpeedDivRight: PropTypes.string.isRequired,
-  rotationSpeedDivLeft: PropTypes.string.isRequired
+  rotationSpeedDivLeft: PropTypes.string.isRequired,
+  hitScore: PropTypes.string.isRequired,
+  failScore: PropTypes.string.isRequired
 };
 
 export default Divs;
