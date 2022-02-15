@@ -1,8 +1,8 @@
 :root {
-    --style-color: red;
+    --style-color: #FF0000;
     --style-background-color: #000;
     
-    --red-style-color: red;
+    --red-style-color: #FF0000;
     --red-style-background-color: #000;
 
     --noir-style-color: #000;
@@ -19,7 +19,7 @@
     width: 100vw;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background-color: #FF0000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,13 +28,14 @@
         height: 80vh;
         width: 80vw;
         border-radius: 10vmin;
-        border: 2vmin solid red;
+        border: 2vmin solid #FF0000;
         background-color: rgba(0, 0, 0, 0.5);
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-size: 2vmax;
         
         .input {
 
@@ -46,16 +47,38 @@
 
             &__speed {
                 opacity: 1;
+                appearance: none;
+                height: 1vh;
+                background-color: #000;
+                border-radius: 0.5vh;
+
+                &::-webkit-slider-thumb {
+                    appearance: none;
+                    height: 2vh;
+                    width: 2vh;
+                    background: #FF0000;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
             }
         }
     }
 
+    &__speed-box {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 20%;
+    }
+
     &__reset-color-button {
+        font-size: 2vmax;
         border-radius: 5vmin;
         height: 10vmin;
         width: 20vmin;
-        margin-top: 1vmin;
+        margin-top: 2vh;
         background-color: rgb(180, 180, 180);
+        cursor: pointer;
 
         &:hover {
             background-color: rgb(207, 206, 206);
@@ -63,14 +86,15 @@
     }
 
     &__div-link {
+        text-decoration: none;
         position: absolute;
         height: 6vmin;
         width: 6vmin;
-        font-size: 0.6rem;
+        font-size: 3vmin;
         top: 7vh;
         right: 9vw;
-        color: red;
-        border: 2vmin solid red;
+        color: #FF0000;
+        border: 2vmin solid #FF0000;
         outline: 0.5 solid rgba(0, 0, 0, 0.3);
         border-radius: 5vh;
         background-color: #000;
@@ -80,5 +104,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        
+        &:hover {
+            background-color:rgb(180, 180, 180);
+        }
     }
 }

@@ -25,6 +25,7 @@ export const Divs = function Divs({
     vanishingPoint.style.backgroundColor = divColor;
     vanishingPoint.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
     hitButton.style.color = divColor;
+    hitButton.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
     menuLink.style.color = divColor;
     menuLink.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
   };
