@@ -35,7 +35,7 @@ export const Menu = function Menu({ setColor, setRotation }) {
   return (
     <section className="menu">
       <div id="menuBox" className="menu__box">
-        <Link to="../">OUT</Link>
+        <Link id="divLink" className="menu__div-link" to="../">OUT</Link>
 
         Rotation Speed:
         <input
@@ -49,18 +49,6 @@ export const Menu = function Menu({ setColor, setRotation }) {
         <input className="input__color" type="color" value={divColor} onChange={(e) => handleDivColors(e.target.value)} />
         Background Color:
         <input className="input__color" type="color" value={backgroundColor} onChange={(e) => handleBackgroundColor(e.target.value)} />
-
-        {/* <input type="range" name="rotation-speed" id="rotation-speed" max="10" min="2" />
-        <form onSubmit={handleColor}>
-          <label>
-            Select style:
-            <input type="radio" name="style" id="red" />
-            <input type="radio" name="style" id="noir" />
-            <input type="radio" name="style" id="gum" />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        {/* <input type="color" name="divs-color" id="divs-color" /> */}
         <button
           type="button"
           onClick={resetColor}

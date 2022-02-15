@@ -16,6 +16,7 @@ export const Divs = function Divs({
     const background = document.getElementById('divs-background');
     const vanishingPoint = document.getElementById('vanishingPoint');
     const hitButton = document.getElementById('hitButton');
+    const menuLink = document.getElementById('menuLink');
     divRight.style.border = `0.25vmin solid ${divColor}`;
     divRight.style.boxShadow = `0 0 1vmin 1vmin ${divColor}`;
     divLeft.style.border = `0.25vmin solid ${divColor}`;
@@ -24,7 +25,8 @@ export const Divs = function Divs({
     vanishingPoint.style.backgroundColor = divColor;
     vanishingPoint.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
     hitButton.style.color = divColor;
-    hitButton.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
+    menuLink.style.color = divColor;
+    menuLink.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
   };
 
   const setRotation = () => {
@@ -85,8 +87,7 @@ export const Divs = function Divs({
       >
         HIT
       </button>
-      <Link id="link-menu" to="../menu">MENU</Link>
-
+      <Link id="menuLink" className="rotation-div__menu-link" to="../menu">M</Link>
       <Score
         hitScore={hitScore}
         failScore={failScore}

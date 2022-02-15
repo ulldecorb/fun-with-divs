@@ -71,4 +71,30 @@
 .menu__reset-color-button:hover {
   background-color: #cfcece;
 }
+
+.menu__div-link {
+  position: absolute;
+  height: 6vmin;
+  width: 6vmin;
+  font-size: 0.6rem;
+  top: 7vh;
+  right: 9vw;
+  color: red;
+  border: 2vmin solid red;
+  outline: 0.5 solid rgba(0, 0, 0, 0.3);
+  border-radius: 5vh;
+  background-color: #000;
+  z-index: 2;
+  text-align: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 /*# sourceMappingURL=menu.css.map */
