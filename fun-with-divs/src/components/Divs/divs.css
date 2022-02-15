@@ -127,19 +127,20 @@
   z-index: 2;
 }
 
-#link-menu {
+.rotation-div__menu-link {
   position: fixed;
-  height: 10vh;
-  width: 20vw;
+  height: 2vmin;
+  width: 2vmin;
   color: red;
-  font-size: 3rem;
-  bottom: 0;
+  font-size: 0.6rem;
+  top: 1vmin;
   cursor: pointer;
-  left: 40vw;
+  right: 1vmin;
   -webkit-box-shadow: 0 0 4vmin 2vmin red;
           box-shadow: 0 0 4vmin 2vmin red;
   border-radius: 5vh;
   background-color: #000;
   z-index: 2;
+  text-align: center;
 }
 /*# sourceMappingURL=divs.css.map */
