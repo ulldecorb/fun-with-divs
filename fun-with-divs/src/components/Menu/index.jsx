@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import './menu.css';
 
@@ -34,6 +35,8 @@ export const Menu = function Menu({ setColor, setRotation }) {
   return (
     <section className="menu">
       <div id="menuBox" className="menu__box">
+        <Link to="../">OUT</Link>
+
         Rotation Speed:
         <input
           type="range"

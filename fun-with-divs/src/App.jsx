@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 import { Divs } from './components/Divs';
-import { Score } from './components/Score';
 import { Menu } from './components/Menu';
 import './App.css';
 
@@ -32,15 +36,36 @@ function App() {
 
   return (
     <div className="App">
-      <Menu setColor={setColor} setRotation={setRotation} />
+      <Router>
+        {/* <Header /> */}
+        <Routes>
+          <Route
+            path="/"
+            element={(
+              <Divs
+                handleCheckFire={handleCheckFire}
+                divColor={divColor}
+                backgroundColor={backgroundColor}
+                rotationSpeedDivRight={rotationSpeedDivRight}
+                rotationSpeedDivLeft={rotationSpeedDivLeft}
+                hitScore={hitScore}
+                failScore={failScore}
+              />
+)}
+          />
+          <Route path="menu" element={<Menu setColor={setColor} setRotation={setRotation} />} />
+        </Routes>
+      </Router>
+      {/* <Menu setColor={setColor} setRotation={setRotation} />
       <Divs
         handleCheckFire={handleCheckFire}
         divColor={divColor}
         backgroundColor={backgroundColor}
         rotationSpeedDivRight={rotationSpeedDivRight}
         rotationSpeedDivLeft={rotationSpeedDivLeft}
-      />
-      <Score hitScore={hitScore} failScore={failScore} />
+        hitScore={hitScore}
+        failScore={failScore}
+      /> */}
     </div>
   );
 }
