@@ -1,6 +1,6 @@
 // import React, { useEffect, useRef, useState } from 'react';
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { Score } from '../Score';
 import './divs.css';
@@ -15,8 +15,8 @@ export const Divs = function Divs({
     const divLeft = document.getElementById('divLeft');
     const background = document.getElementById('divs-background');
     const vanishingPoint = document.getElementById('vanishingPoint');
-    const hitButton = document.getElementById('hitButton');
-    const menuLink = document.getElementById('menuLink');
+    // const hitButton = document.getElementById('hitButton');
+    // const menuLink = document.getElementById('menuLink');
     divRight.style.border = `0.25vmin solid ${divColor}`;
     divRight.style.boxShadow = `0 0 1vmin 1vmin ${divColor}`;
     divLeft.style.border = `0.25vmin solid ${divColor}`;
@@ -24,10 +24,10 @@ export const Divs = function Divs({
     background.style.backgroundColor = backgroundColor;
     vanishingPoint.style.backgroundColor = divColor;
     vanishingPoint.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
-    hitButton.style.color = divColor;
-    hitButton.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
-    menuLink.style.color = divColor;
-    menuLink.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
+    // hitButton.style.color = divColor;
+    // hitButton.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
+    // menuLink.style.color = divColor;
+    // menuLink.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
   };
 
   const setRotation = () => {
@@ -43,10 +43,6 @@ export const Divs = function Divs({
   useEffect(() => {
     setRotation();
   });
-
-  // useEffect(() => {
-  //   window.addEventListener('onKeyPress', () => getResult);
-  // }, []);
 
   const checkHit = (angle) => {
     let isHit = false;
@@ -64,35 +60,48 @@ export const Divs = function Divs({
     return Math.round(Math.asin(sin) * (180 / Math.PI));
   };
 
-  const handleFire = () => {
+  const handleClickFire = () => {
     const divRight = getComputedStyle(document.getElementById('divRight')).transform;
     const currentAngle = convertToAngle(divRight);
     handleCheckFire(checkHit(currentAngle));
   };
 
+  const handleKeyFire = (e) => {
+    e.preventDefault();
+    const { key } = e;
+    console.log(`key: ${key}`);
+    if (key === 'Enter' || key === ' ') {
+      handleClickFire();
+    }
+  };
+
   return (
     <section
       className="rotation-div__box"
-      role="presentation"
-      onKeyPress={(e) => handleFire(e)}
       id="divs-background"
+      role="presentation"
+      onKeyDown={handleKeyFire}
     >
       <figure id="divRight" className="rotation-div__square" />
       <figure id="divLeft" className="rotation-div__square" />
       <figure id="vanishingPoint" className="rotation-div__vanishing-point" />
-      <button
-        type="button"
-        id="hitButton"
-        className="rotation-div__hit-button"
-        onClick={handleFire}
-      >
-        HIT
-      </button>
-      <Link id="menuLink" className="rotation-div__menu-link" to="../menu">M</Link>
       <Score
         hitScore={hitScore}
         failScore={failScore}
       />
+      <div
+        className="rotation-div__hit-panel"
+      >
+        {/* <button
+          type="button"
+          id="hitButton"
+          className="rotation-div__hit-button"
+          onClick={handleClickFire}
+        >
+          HIT
+        </button> */}
+        {/* <Link id="menuLink" className="rotation-div__menu-link" to="../menu">M</Link> */}
+      </div>
     </section>
   );
 };
