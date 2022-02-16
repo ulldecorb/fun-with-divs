@@ -111,7 +111,7 @@
           box-shadow: 0 0 10vmin 10vmin red;
 }
 
-.rotation-div__hit-button {
+.rotation-div__menu-link {
   text-decoration: none;
   position: fixed;
   height: 10vh;
@@ -135,11 +135,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: opacity 2 s;
+  transition: opacity 2 s;
+  opacity: 0;
 }
 
-.rotation-div__hit-button:hover {
+.rotation-div__menu-link:hover {
   -webkit-filter: invert(100%);
           filter: invert(100%);
+  opacity: 1;
 }
 
 .rotation-div__hit-panel {
@@ -151,7 +155,7 @@
   background-color: transparent;
 }
 
-.rotation-div__menu-link {
+.rotation-div__hit-button {
   position: fixed;
   height: 6vmin;
   width: 6vmin;

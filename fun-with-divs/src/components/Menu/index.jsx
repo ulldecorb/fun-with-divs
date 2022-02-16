@@ -16,8 +16,6 @@ export const Menu = function Menu({ setColor, setRotation }) {
   };
 
   const handleDivColors = (color) => {
-    console.log(`color ${color}`);
-    console.log(`typeof color: ${typeof (color)}`);
     setDivColor(color);
     setColor(divColor, backgroundColor);
     const menuBox = document.getElementById('menuBox');

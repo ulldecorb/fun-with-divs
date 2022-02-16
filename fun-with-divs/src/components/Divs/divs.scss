@@ -71,7 +71,7 @@
         box-shadow: 0 0 10vmin 10vmin red;
     }
 
-    &__hit-button {
+    &__menu-link {
         text-decoration: none;
         position: fixed;
         height: 10vh;
@@ -88,9 +88,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: opacity 2 s;
+        opacity: 0;
         
         &:hover {
             filter: invert(100%);
+            opacity: 1;
         }
     }
 
@@ -102,7 +105,8 @@
         left: 0;
         background-color: transparent;
     }
-    &__menu-link {
+
+    &__hit-button {
         position: fixed;
         height: 6vmin;
         width: 6vmin;
@@ -120,5 +124,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        // opacity: 0;
     }
 }
