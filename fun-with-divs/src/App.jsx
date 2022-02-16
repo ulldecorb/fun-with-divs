@@ -37,7 +37,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* <Header /> */}
         <Routes>
           <Route
             path="/"
@@ -51,21 +50,11 @@ function App() {
                 hitScore={hitScore}
                 failScore={failScore}
               />
-)}
+            )}
           />
           <Route path="menu" element={<Menu setColor={setColor} setRotation={setRotation} />} />
         </Routes>
       </Router>
-      {/* <Menu setColor={setColor} setRotation={setRotation} />
-      <Divs
-        handleCheckFire={handleCheckFire}
-        divColor={divColor}
-        backgroundColor={backgroundColor}
-        rotationSpeedDivRight={rotationSpeedDivRight}
-        rotationSpeedDivLeft={rotationSpeedDivLeft}
-        hitScore={hitScore}
-        failScore={failScore}
-      /> */}
     </div>
   );
 }
