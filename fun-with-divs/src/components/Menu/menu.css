@@ -1,9 +1,9 @@
 :root {
-  --style-color: #FF0000;
-  --style-background-color: #000;
-  --red-style-color: #FF0000;
-  --red-style-background-color: #000;
-  --noir-style-color: #000;
+  --style-color: #ff0000;
+  --style-background-color: #000000;
+  --red-style-color: #ff0000;
+  --red-style-background-color: #000000;
+  --noir-style-color: #000000;
   --noir-style-background-color: #FFF;
   --gum-style-color: yellow;
   --gum-style-background-color: orange;
@@ -16,7 +16,7 @@
   width: 100vw;
   top: 0;
   left: 0;
-  background-color: #FF0000;
+  background-color: #ff0000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,8 +32,8 @@
   height: 80vh;
   width: 80vw;
   border-radius: 10vmin;
-  border: 2vmin solid #FF0000;
-  background-color: rgba(0, 0, 0, 0.5);
+  border: 2vmin solid #ff0000;
+  background-color: #000000;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -63,7 +63,7 @@
      -moz-appearance: none;
           appearance: none;
   height: 1vh;
-  background-color: #000;
+  background-color: #000000;
   border-radius: 0.5vh;
 }
 
@@ -72,7 +72,7 @@
           appearance: none;
   height: 2vh;
   width: 2vh;
-  background: #FF0000;
+  background: #ff0000;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -101,7 +101,8 @@
 }
 
 .menu__reset-color-button:hover {
-  background-color: #cfcece;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
 .menu__div-link {
@@ -112,11 +113,10 @@
   font-size: 3vmin;
   top: 7vh;
   right: 9vw;
-  color: #FF0000;
-  border: 2vmin solid #FF0000;
-  outline: 0.5 solid rgba(0, 0, 0, 0.3);
+  color: #ff0000;
+  border: 2vmin solid #ff0000;
   border-radius: 5vh;
-  background-color: #000;
+  background-color: #000000;
   z-index: 2;
   text-align: center;
   cursor: pointer;
@@ -132,6 +132,7 @@
 }
 
 .menu__div-link:hover {
-  background-color: #b4b4b4;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 /*# sourceMappingURL=menu.css.map */

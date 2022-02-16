@@ -36,10 +36,10 @@
 
     &__square {
         // margin: 0 auto;
-        height: 90%;
-        width: 90%;
-        // height: 20%;
-        // width: 20%;
+        // height: 90%;
+        // width: 90%;
+        height: 20%;
+        width: 20%;
         border: 0.25vmin solid #FF0000;
         box-shadow: 0 0 1vmin 1vmin #FF0000;
         position: absolute;
@@ -72,11 +72,12 @@
     }
 
     &__hit-button {
+        text-decoration: none;
         position: fixed;
         height: 10vh;
         width: 20vw;
         color: #FF0000;
-        font-size: 8vh;
+        font-size: 7vmin;
         bottom: 10vh;
         cursor: pointer;
         left: 40vw;
@@ -84,6 +85,13 @@
         border-radius: 5vh;
         background-color: #000;
         z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &:hover {
+            filter: invert(100%);
+        }
     }
 
     &__hit-panel {
