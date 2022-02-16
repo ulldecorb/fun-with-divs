@@ -15,7 +15,6 @@ export const Divs = function Divs({
     const divLeft = document.getElementById('divLeft');
     const background = document.getElementById('divs-background');
     const vanishingPoint = document.getElementById('vanishingPoint');
-    // const hitButton = document.getElementById('hitButton');
     const menuLink = document.getElementById('menuLink');
     divRight.style.border = `0.25vmin solid ${divColor}`;
     divRight.style.boxShadow = `0 0 1vmin 1vmin ${divColor}`;
@@ -24,8 +23,6 @@ export const Divs = function Divs({
     background.style.backgroundColor = backgroundColor;
     vanishingPoint.style.backgroundColor = divColor;
     vanishingPoint.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
-    // hitButton.style.color = divColor;
-    // hitButton.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
     menuLink.style.color = divColor;
     menuLink.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
   };
@@ -69,10 +66,17 @@ export const Divs = function Divs({
   const handleKeyFire = (e) => {
     e.preventDefault();
     const { key } = e;
-    console.log(`key: ${key}`);
     if (key === 'Enter' || key === ' ') {
       handleClickFire();
     }
+  };
+
+  const showLink = () => {
+    const menu = document.getElementById('menuLink');
+    menu.style.opacity = '1';
+    setTimeout(() => {
+      menu.style.opacity = '0';
+    }, 2000);
   };
 
   return (
@@ -87,29 +91,31 @@ export const Divs = function Divs({
         hitScore={hitScore}
         failScore={failScore}
       />
-      <div
-        className="rotation-div__hit-panel"
-        role="presentation"
-        onKeyDown={handleKeyFire}
+      <Link
+        id="menuLink"
+        className="rotation-div__menu-link"
+        to="../menu"
       >
-        <button
-          type="button"
-          id="hitButton"
-          // className="rotation-div__hit-button"
-          className="rotation-div__menu-link"
-          onClick={handleClickFire}
-        >
-          HIT
-        </button>
-        <Link
-          id="menuLink"
-          // className="rotation-div__menu-link"
-          className="rotation-div__hit-button"
-          to="../menu"
-        >
-          MENU
-        </Link>
-      </div>
+        MENU
+      </Link>
+      <button
+        type="button"
+        className="rotation-div__hit-panel"
+        onClick={handleClickFire}
+        onKeyDown={handleKeyFire}
+        onMouseMove={showLink}
+        // eslint-disable-next-line jsx-a11y/no-autofocus
+        autoFocus
+      >
+        {' '}
+      </button>
+      <Link
+        id="menuLink"
+        className="rotation-div__menu-link"
+        to="../menu"
+      >
+        MENU
+      </Link>
     </section>
   );
 };
