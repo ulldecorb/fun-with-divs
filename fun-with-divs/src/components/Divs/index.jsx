@@ -1,6 +1,6 @@
 // import React, { useEffect, useRef, useState } from 'react';
 import React, { useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { Score } from '../Score';
 import './divs.css';
@@ -16,7 +16,7 @@ export const Divs = function Divs({
     const background = document.getElementById('divs-background');
     const vanishingPoint = document.getElementById('vanishingPoint');
     // const hitButton = document.getElementById('hitButton');
-    // const menuLink = document.getElementById('menuLink');
+    const menuLink = document.getElementById('menuLink');
     divRight.style.border = `0.25vmin solid ${divColor}`;
     divRight.style.boxShadow = `0 0 1vmin 1vmin ${divColor}`;
     divLeft.style.border = `0.25vmin solid ${divColor}`;
@@ -26,8 +26,8 @@ export const Divs = function Divs({
     vanishingPoint.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
     // hitButton.style.color = divColor;
     // hitButton.style.boxShadow = `0 0 10vmin 10vmin ${divColor}`;
-    // menuLink.style.color = divColor;
-    // menuLink.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
+    menuLink.style.color = divColor;
+    menuLink.style.boxShadow = `0 0 4vmin 2vmin ${divColor}`;
   };
 
   const setRotation = () => {
@@ -79,8 +79,6 @@ export const Divs = function Divs({
     <section
       className="rotation-div__box"
       id="divs-background"
-      role="presentation"
-      onKeyDown={handleKeyFire}
     >
       <figure id="divRight" className="rotation-div__square" />
       <figure id="divLeft" className="rotation-div__square" />
@@ -91,16 +89,26 @@ export const Divs = function Divs({
       />
       <div
         className="rotation-div__hit-panel"
+        role="presentation"
+        onKeyDown={handleKeyFire}
       >
-        {/* <button
+        <button
           type="button"
           id="hitButton"
-          className="rotation-div__hit-button"
+          // className="rotation-div__hit-button"
+          className="rotation-div__menu-link"
           onClick={handleClickFire}
         >
           HIT
-        </button> */}
-        {/* <Link id="menuLink" className="rotation-div__menu-link" to="../menu">M</Link> */}
+        </button>
+        <Link
+          id="menuLink"
+          // className="rotation-div__menu-link"
+          className="rotation-div__hit-button"
+          to="../menu"
+        >
+          MENU
+        </Link>
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import './menu.css';
 export const Menu = function Menu({ setColor, setRotation }) {
   const [rotationSpeedDivRight, setRotationSpeedDivRight] = useState('10');
   const [rotationSpeedDivLeft, setRotationSpeedDivLeft] = useState('10');
-  const [divColor, setDivColor] = useState('#FF0000');
+  const [divColor, setDivColor] = useState('#ff0000');
   const [backgroundColor, setBackgroundColor] = useState('#00000');
 
   const handleRotationSpeed = (speed) => {
@@ -16,6 +16,8 @@ export const Menu = function Menu({ setColor, setRotation }) {
   };
 
   const handleDivColors = (color) => {
+    console.log(`color ${color}`);
+    console.log(`typeof color: ${typeof (color)}`);
     setDivColor(color);
     setColor(divColor, backgroundColor);
     const menuBox = document.getElementById('menuBox');
