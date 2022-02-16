@@ -46,6 +46,18 @@ export const Divs = function Divs({
     if (angle === 0 || angle === 90 || angle === -90) {
       isHit = true;
     }
+    const divRight = document.getElementById('divRight');
+    const divLeft = document.getElementById('divLeft');
+    divRight.style.animationPlayState = 'paused';
+    divRight.style.filter = 'invert(100%)';
+    divLeft.style.animationPlayState = 'paused';
+    divLeft.style.filter = 'invert(100%)';
+    setTimeout(() => {
+      divRight.style.animationPlayState = 'running';
+      divRight.style.filter = 'invert(0%)';
+      divLeft.style.animationPlayState = 'running';
+      divLeft.style.filter = 'invert(0%)';
+    }, 1000);
     return isHit;
   };
 
