@@ -1,7 +1,19 @@
 # fun-with-divs
 Retro game where victory is achieved by hitting two squares at the same time.
 
+## Technologies
+* React 17.0.2
+* Eslint 8.8.0
+* Jest 5.16.2
+* testing-library 12.1.2
 
+## Setup
+After clone repository:
+```bash
+npm install
+cd fun-with-divs
+npm start
+```
 
 <!-- Not an exact answer, but the warning is coming from Blink which is Chrome's DOM implementation. https://chromium.googlesource.com/chromium/src/+/011c27ced479c76cffd5093ce107082e4da657f3/third_party/blink/renderer/core/html/forms/color_input_type.cc#190
 
